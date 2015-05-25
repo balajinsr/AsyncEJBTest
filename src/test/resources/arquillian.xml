@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.jboss.org/schema/arquillian http://www.jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <container qualifier="tomee" default="true">
+        <configuration>
+            <property name="httpPort">-1</property>
+            <property name="stopPort">-1</property>
+            <!--Optional Container Properties-->
+            <property name="properties">
+                AsynchronousPool.CorePoolSize=5
+                AsynchronousPool.MaximumPoolSize=5
+                AsynchronousPool.QueueSize=5
+                AsynchronousPool.OfferTimeout=30 seconds
+                AsynchronousPool.QueueType=LINKED
+                AsynchronousPool.OfferTimeout=30 seconds
+            </property>
+        </configuration>
+    </container>
+
+</arquillian>

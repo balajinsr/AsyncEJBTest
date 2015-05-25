@@ -1,0 +1,28 @@
+group 'foo.bar'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.apache.geronimo.specs:geronimo-ejb_3.1_spec:1.0.2'
+    compile 'com.jayway.awaitility:awaitility:1.6.1'
+
+    testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.8.Final'
+    testCompile 'junit:junit:4.12'
+
+    testRuntime 'org.apache.openejb:arquillian-tomee-remote:1.7.2'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        exceptionFormat "full"
+    }
+}
